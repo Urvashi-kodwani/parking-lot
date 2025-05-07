@@ -15,21 +15,21 @@ public class EntranceGate {
     private ParkingSpotManagerFactory parkingSpotManagerFactory;
     private Ticket ticket;
 
-    public  EntranceGate(ParkingSpotManagerFactory parkingSpotManagerFactory){
+    public EntranceGate(ParkingSpotManagerFactory parkingSpotManagerFactory){
         this.parkingSpotManagerFactory = parkingSpotManagerFactory;
     }
 
     public ParkingSpot findParkingSport(Vehicle vehicle, List<ParkingSpot> parkingSpotList) {
         ParkingSpotManager parkingSpotManager = parkingSpotManagerFactory.getParkingSpotManager(vehicle, parkingSpotList);
-        return parkingSpotManager.findParkingSpot();
+        return parkingSpotManager.findParkingSpot(  parkingSpotList);
     }
 
-    public void bookSpot(Vehicle vehicle) {
-        //todo: check implementation
+    public void bookSpot(Vehicle vehicle,ParkingSpot parkingSpot) {
+        parkingSpot.parkVehicle(vehicle);
     }
 
     public Ticket generateTicket(Vehicle vehicle, ParkingSpot parkingSpot) {
-        //todo: implement generte ticket;
-        return null;
+        Ticket ticket = new Ticket(System.currentTimeMillis(), vehicle, parkingSpot);
+        return ticket;
     }
 }

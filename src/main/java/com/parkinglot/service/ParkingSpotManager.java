@@ -13,13 +13,13 @@ public abstract class ParkingSpotManager {
         this.parkingSpotList = parkingSpotList;
     }
 
-   public abstract ParkingSpot findParkingSpot();
+   public abstract ParkingSpot findParkingSpot( List<ParkingSpot> parkingSpotList);
 
-    void addParkingSpace(ParkingSpot parkingSpot) {
+  public   void addParkingSpace(ParkingSpot parkingSpot) {
         this.parkingSpotList.add(parkingSpot);
     }
 
-    void removeParkingSpace(ParkingSpot parkingSpot) {
+    public   void removeParkingSpace(ParkingSpot parkingSpot) {
         for (ParkingSpot parkingSpots : parkingSpotList) {
             if (parkingSpots.equals(parkingSpot)) {
                 parkingSpotList.remove(parkingSpot);
@@ -27,8 +27,8 @@ public abstract class ParkingSpotManager {
         }
     }
 
-    void parkVehicle(Vehicle vehicle) {
-        ParkingSpot parkingSpot = findParkingSpot();
+    public  void parkVehicle(Vehicle vehicle) {
+        ParkingSpot parkingSpot = findParkingSpot(parkingSpotList);
         parkingSpot.parkVehicle(vehicle);
     }
 

@@ -11,8 +11,9 @@ public class FourWheelerParkingSpotManager extends ParkingSpotManager{
     }
 
     @Override
-   public ParkingSpot findParkingSpot() {
+   public ParkingSpot findParkingSpot( List<ParkingSpot> parkingSpotList) {
         //todo: add logic
-        return null;
+        return parkingSpotList.stream().filter(parkingSpot -> parkingSpot.isEmpty()).findFirst().orElse(null);
+
     }
 }
