@@ -27,7 +27,8 @@ public class Application {
         Vehicle fourWheeler = new Vehicle(10002, VehicleType.FOUR_WHEELER);
 
         ParkingSpot parkingSpot = entranceGate.findParkingSport(twoWheeler,parkingSpotList);
+        entranceGate.bookSpot(twoWheeler,parkingSpot);
         Ticket ticket = entranceGate.generateTicket(twoWheeler,parkingSpot);
-        exitGate.removeVehicle(ticket);
+        exitGate.removeVehicle(parkingSpotList,ticket);
     }
 }
