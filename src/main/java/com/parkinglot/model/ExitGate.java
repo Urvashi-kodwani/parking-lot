@@ -1,7 +1,7 @@
 package com.parkinglot.model;
 
 import com.parkinglot.service.ParkingSpotManager;
-import com.parkinglot.service.factory.ParkingSpotManagerFactory;
+import com.parkinglot.service.factory.ParkingManagerFactory;
 
 import java.util.List;
 
@@ -9,14 +9,14 @@ public class ExitGate {
     private Ticket ticket;
    // private CostComputation costComputation;
     private ParkingSpotManager parkingSpotManager;
-    private ParkingSpotManagerFactory parkingSpotManagerFactory;
+    private ParkingManagerFactory parkingManagerFactory;
 
-    public  ExitGate(ParkingSpotManagerFactory parkingSpotManagerFactory){
-        this.parkingSpotManagerFactory = parkingSpotManagerFactory;
+    public  ExitGate(ParkingManagerFactory parkingManagerFactory){
+        this.parkingManagerFactory = parkingManagerFactory;
     }
 
     public void removeVehicle(List<ParkingSpot> parkingSpotList, Ticket ticket) {
-        ParkingSpotManager parkingSpotManager = parkingSpotManagerFactory.getParkingSpotManager(ticket.getVehicle(), parkingSpotList);
+        ParkingSpotManager parkingSpotManager = parkingManagerFactory.getParkingSpotManager(ticket.getVehicle(), parkingSpotList);
         parkingSpotManager.removeVehicle(ticket.getVehicle());
     }
 

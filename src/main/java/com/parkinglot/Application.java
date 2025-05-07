@@ -2,7 +2,7 @@ package com.parkinglot;
 
 import com.parkinglot.enums.VehicleType;
 import com.parkinglot.model.*;
-import com.parkinglot.service.factory.ParkingSpotManagerFactory;
+import com.parkinglot.service.factory.ParkingManagerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +18,10 @@ public class Application {
             }
         }
 
-        ParkingSpotManagerFactory parkingSpotManagerFactory = new ParkingSpotManagerFactory();
+        ParkingManagerFactory parkingManagerFactory = new ParkingManagerFactory();
 
-        EntranceGate entranceGate = new EntranceGate(parkingSpotManagerFactory);
-        ExitGate exitGate = new ExitGate(parkingSpotManagerFactory);
+        EntranceGate entranceGate = new EntranceGate(parkingManagerFactory);
+        ExitGate exitGate = new ExitGate(parkingManagerFactory);
 
         Vehicle twoWheeler = new Vehicle(10001, VehicleType.TWO_WHEELER);
         Vehicle fourWheeler = new Vehicle(10002, VehicleType.FOUR_WHEELER);

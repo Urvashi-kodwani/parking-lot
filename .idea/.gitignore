@@ -9,7 +9,7 @@
 /*.xml
 
 # Maven specific files
-target
+/target/
 
 # Logs
 *.log
@@ -17,3 +17,10 @@ target
 # OS-specific files
 .DS_Store
 Thumbs.db
+
+# Exclude compiled Java classes
+*.class
+
+# Exclude temporary files
+*.tmp
+*.swp

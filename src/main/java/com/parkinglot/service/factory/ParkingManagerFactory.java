@@ -9,7 +9,7 @@ import com.parkinglot.service.TwoWheelerParkingSpotManager;
 
 import java.util.List;
 
-public class ParkingSpotManagerFactory {
+public class ParkingManagerFactory {
 
    public ParkingSpotManager getParkingSpotManager(Vehicle vehicle, List<ParkingSpot> parkingSpotList) {
         if (vehicle.getVehicleType().equals(VehicleType.TWO_WHEELER)) {
